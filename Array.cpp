@@ -2,7 +2,6 @@
 #include <string>
 #include <random> // ar reikia?
 #include <time.h> 
-#include <vector>
 #include <algorithm>  //sort
 #include <iomanip> // setPrecision
 
@@ -32,16 +31,17 @@ class Student{
         
 };
 
-double getAverage(vector<double> &grades);
-double getMedian(vector<double> &grades);
-void getRandomGrades(vector<double> &grades, int pazKiek, double *examRez);
+double getAverage(double [], int);
+double getMedian(double [], int);
+void getRandomGrades(double[], int , double *);
 void drawTitle(bool showAvrg);
 
 
 
 int main(){
 
-    int studKiek, pazKiek;
+    int studKiek;
+    int pazKiek = 0;
     bool showAvrg, makeRandom;
 
 
@@ -116,7 +116,7 @@ int main(){
 
    
    for(int i = 0; i<studKiek; i++){
-       vector <double> grades;
+       double *grades = new double[1];
        double examRez;
        double namuRez; //bendras namu darbu rez vid/med
 
@@ -128,6 +128,7 @@ int main(){
        }
        else{
            studList[i].setName();
+
            cout<<"Iveskite, namu darbu pazymius, norint uzbaigti ivedima (-1)"<<endl;
            while(1){
         
@@ -140,11 +141,22 @@ int main(){
                     continue;
                }
                else if( grade<0) break;
-                else grades.push_back(grade);
+                
+                double *temp = new double[pazKiek+1];
+                //copy
+                for(int i = 0; i<pazKiek; i++){
+                    temp[i] = grades[i];
+                }
+                //delete old
+                delete [] grades;
+                //add new value
+                temp[pazKiek] = grade;
+                grades = temp;
+                
+
             
            }
             cinClean();
-
 
            cout<<"Iveskite egzamino rezultata "<<endl;
            while(1){
@@ -161,10 +173,12 @@ int main(){
 
        }
 
-       if(showAvrg == 1) namuRez = getAverage(grades);
-       else namuRez = getMedian(grades);
-        
+       if(showAvrg == 1) namuRez = getAverage(grades, pazKiek);
+       else namuRez = getMedian(grades, pazKiek);
+    
         studList[i].setFinalGrade(namuRez, examRez);
+
+        delete [] grades;
 
    }
 
@@ -185,33 +199,35 @@ void cinClean(){
     cin.ignore(10000, '\n'); 
 }
 
-double getAverage(vector<double> &grades){
+double getAverage(double grades[], int pazKiek){
     double sum = 0;
+    pazKiek++; //kad rodytu skaiciu o ne masyvo vieta
 
-    for(int i = 0; i<grades.size(); i++){
+    for(int i = 0; i<pazKiek; i++){
         sum += grades[i];
     }
 
-    return sum/grades.size();
+    return sum/pazKiek;
 }
 
-double getMedian(vector<double> &grades){
+double getMedian(double grades[], int pazKiek){
     double median;
+    pazKiek++; // kad rodytu skaiciu o ne masyvo vieta
 
-    sort(grades.begin(), grades.end());
+    sort(grades, grades+pazKiek);
 
-    if(grades.size()%2 == 1) median = grades[grades.size()/2];
+    if(pazKiek%2 == 1) median = grades[pazKiek/2];
     
-    else  median = grades[grades.size()/2] + grades[(grades.size()/2)- 1];
+    else  median = grades[pazKiek/2] + grades[(pazKiek/2)- 1];
 
     return median;
    
 }
 
-void getRandomGrades(vector<double> &grades, int pazKiek, double *examRez){
+void getRandomGrades(double grades[], int pazKiek, double *examRez){
     srand(time(0));
     for(int i = 0; i<pazKiek; i++){
-        grades.push_back(rand()%11);
+        grades[i] = rand()%11;
     }
 
     *examRez = rand()%11;
