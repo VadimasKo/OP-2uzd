@@ -210,6 +210,7 @@ double getMedian(vector<double> &grades){
 
 void getRandomGrades(vector<double> &grades, int pazKiek, double *examRez){
     srand(time(0));
+    grades.reserve(pazKiek);
     for(int i = 0; i<pazKiek; i++){
         grades.push_back(rand()%11);
     }
