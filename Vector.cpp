@@ -166,6 +166,7 @@ int main(){
         
         studList[i].setFinalGrade(namuRez, examRez);
 
+        vector.clear();
    }
 
     drawTitle(showAvrg);
