@@ -1,5 +1,4 @@
 # OP-2uzd v0.1
-# OBJ-Programavimas 2*oji uzduotis
 Parašykite programą, kuri nuskaito šiuos studentų duomenis: 
 ```shell
 *vardą ir pavardę.     
