@@ -31,7 +31,7 @@ struct Student{ // make struct   all - public
     
 };
 
-double getAverage(double [], int);  //add to struct
+double getAverage(double [], int);  
 double getMedian(double [], int);
 void getRandomGrades(double[], int , double *);
 void drawTitle(bool showAvrg);

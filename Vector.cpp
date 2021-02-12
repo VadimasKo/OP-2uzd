@@ -11,6 +11,7 @@ using namespace std;
 void cinClean();
 
 struct Student{
+
         string fName, lName;
         double finalGrade;
    
@@ -28,8 +29,7 @@ struct Student{
             cout<<lName<<"\t"<<fName<<"\t"<<finalGrade<<endl;
           
         }
-        
-        
+         
 };
 
 double getAverage(vector<double> &grades);
@@ -161,8 +161,12 @@ int main(){
 
        }
 
-       if(showAvrg == 1) namuRez = getAverage(grades);
-       else namuRez = getMedian(grades);
+       if(showAvrg == 1) 
+            if(pazKiek == 0) namuRez = 0;
+            else namuRez = getAverage(grades);
+       else
+            if(pazKiek == 0) namuRez = 0;
+            else namuRez = getMedian(grades);
         
         studList[i].setFinalGrade(namuRez, examRez);
 
