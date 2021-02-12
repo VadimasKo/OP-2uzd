@@ -3,35 +3,35 @@
 #include <random> // ar reikia?
 #include <time.h> 
 #include <algorithm>  //sort
-#include <iomanip> // setPrecision
+#include <iomanip>  //setPrecision
 
 using namespace std;
 
 void cinClean();
 
-class Student{
-    private:
-        string fName, lName;
-        double finalGrade;
-    public:
-        void setFinalGrade(double namuRez, double examRez){
-            finalGrade = (namuRez*0.4) + (examRez*0.6);
-        }
-        void setName(){
-            cout<<"Iveskite Varda Pavarde"<<endl;
-            cin>>fName>>lName;
-            cinClean();
-        }
-        void print(){
-            cout.precision(2);
-            cout<<fixed;
-            cout<<lName<<"\t"<<fName<<"\t"<<finalGrade<<endl;
-          
-        }
+struct Student{ // make struct   all - public
+
+    string fName, lName;
+    double finalGrade;
+
+    void setFinalGrade(double namuRez, double examRez){
+        finalGrade = (namuRez*0.4) + (examRez*0.6);
+    }
+    void setName(){
+        cout<<"Iveskite Varda Pavarde"<<endl;
+        cin>>fName>>lName;
+        cinClean();
+    }
+    void print(){
+        cout.precision(2);
+        cout<<fixed;
+        cout<<lName<<"\t"<<fName<<"\t"<<finalGrade<<endl;
         
+    }
+    
 };
 
-double getAverage(double [], int);
+double getAverage(double [], int);  //add to struct
 double getMedian(double [], int);
 void getRandomGrades(double[], int , double *);
 void drawTitle(bool showAvrg);

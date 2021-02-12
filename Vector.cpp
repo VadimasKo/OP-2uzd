@@ -10,11 +10,10 @@ using namespace std;
 
 void cinClean();
 
-class Student{
-    private:
+struct Student{
         string fName, lName;
         double finalGrade;
-    public:
+   
         void setFinalGrade(double namuRez, double examRez){
             finalGrade = (namuRez*0.4) + (examRez*0.6);
         }
@@ -29,6 +28,7 @@ class Student{
             cout<<lName<<"\t"<<fName<<"\t"<<finalGrade<<endl;
           
         }
+        
         
 };
 
@@ -166,7 +166,7 @@ int main(){
         
         studList[i].setFinalGrade(namuRez, examRez);
 
-        vector.clear();
+        grades.clear();
    }
 
     drawTitle(showAvrg);
@@ -214,7 +214,7 @@ void getRandomGrades(vector<double> &grades, int pazKiek, double *examRez){
     grades.reserve(pazKiek);
     for(int i = 0; i<pazKiek; i++){
         grades.push_back(rand()%11);
-    }
+    } 
 
     *examRez = rand()%11;
 }
