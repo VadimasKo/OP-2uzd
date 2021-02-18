@@ -1,32 +1,11 @@
-# OP-2uzd v0.1
-Parašykite programą, kuri nuskaito šiuos studentų duomenis: 
-```shell
-*vardą ir pavardę.     
-*n atliktų namų darbų (nd) rezultatus (10-balėje sistemoje), 
-*o taip pat egzamino (egz) rezultatą.  
-```
-Tuomet iš šių duomenų, suskaičiuoja galutinį balą (galutinis):
+# OP-2uzd v0.2
+Papildykite programos versiją (v0.1) taip, kad būtų galima duomenis ne tik įvesti bet ir nuskaityti iš failo. Todėl sukurkite ir užpildykite failą kursiokai.txt, kurio (pleriminari) struktūra:
 
-Reikalavimai versijai (v0.1)
-*Baigus duomenų įvedimą, suskaičiuoja galutinį balą ir juos pateikia į ekraną tokiu ar panašiu pavidalu (kur galutinis apskaičiuotas balas pateikiamas dviejų skaičių po kablelio tikslumu)
+Papildykite programą taip, kad nuskaičiuos duomenis iš failo, išvedimas pleriminariai atrodytų taip:
 ```shell
-pavarde vardas galutinis(vid)
------------------------------
-pavardenis vardenis x.yy
-...
+pavarde vardas galutinis(vid) galutinis(med)
+--------------------------------------------
 ```
-Papildykite programą, kad vietoj vidurkio galutinio balo skaičiavimui būtų galima naudoti ir medianą. Tuomet išvedimas (output’as) turėtų atrodyti panašiai į šį, kur tik vienas pasirinktas Galutinis (Vid.) arba Galutinis (Med.) yra išvedamas:
-skaičių po kablelio tikslumu)
-```shell
-pavarde vardas galutinis(vid)
------------------------------
-pavardenis vardenis x.yy
-...
-```
-Papildykite programą taip, kad ji veiktų ir tokiu atveju, kai namų darbų skaičius (n) yra nežinomas iš anksto, t.y. tik įvedimo metu vartotojas nusprendžia kuomet jis jau įvedė visų namų darbų rezultatus. Šią dalį realizuoti reiktų dviem būdais, kur namų darbų rezultatus saugant į:
-```shell
-*masyva
-*vektoriu
-```
-Papildykite programą taip, kad būtų galimybė, jog mokinio gautieji balai už namų darbus bei egzaminą būtų generuojami atsitiktinai.
 
+
+Reikalavimai output’ui: studentai turi būti surūšiuoti pagal vardus (ar pavardes) ir visi stulpeliai būtų gražiai "išlygiuoti".
