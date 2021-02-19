@@ -1,49 +1,37 @@
-#include <iostream>
-#include <string>
-#include <random> // ar reikia?
-#include <time.h> 
-#include <vector>
-#include <algorithm>  //sort
-#include <iomanip> // setPrecision
+#include "UI.hpp"
 
-using namespace std;
-
-void cinClean();
-
-struct Student{
-
-        string fName, lName;
-        double finalGrade;
-   
-        void setFinalGrade(double namuRez, double examRez){
-            finalGrade = (namuRez*0.4) + (examRez*0.6);
-        }
-        void setName(){
-            cout<<"Iveskite Varda Pavarde"<<endl;
-            cin>>fName>>lName;
-            cinClean();
-        }
-        void print(){
-            cout.precision(2);
-            cout<<fixed;
-            cout<<lName<<"\t"<<fName<<"\t"<<finalGrade<<endl;
-          
-        }
-         
-};
-
-double getAverage(vector<double> &grades);
-double getMedian(vector<double> &grades);
 void getRandomGrades(vector<double> &grades, int pazKiek, double *examRez);
 void drawTitle(bool showAvrg);
 
 
+struct Student{
 
-int main(){
+    string fName,lName;
+    double finalGrade;
+
+    void setFinalGrade(double namuRez, double examRez){
+        finalGrade = (namuRez*0.4) + (examRez*0.6);
+    }
+
+    void setName(){
+        cout<<"Iveskite Varda Pavarde"<<endl;
+        cin>>fName>>lName;
+        cinClean();
+    }
+
+    void print(){
+        cout.precision(2);
+        cout<<fixed;
+        cout<<lName<<"\t"<<fName<<"\t"<<finalGrade<<endl;
+    }
+    
+};
+
+//------------main block------------------------
+void userInputProgram(){
 
     int studKiek, pazKiek;
     bool showAvrg, makeRandom;
-
 
     //gauname pradinius parametrus
     cout<<"Sveiki, prasome ivesti studentu kieki!"<<endl;
@@ -58,61 +46,9 @@ int main(){
 
     Student studList[studKiek];
 
-    cout<<"Ar norite kad rodytu galutini(vid) y/n  (y-vid / n-med)"<<endl;
-    while(1){
-        char ans;
-        cin>>ans;
-
-        if ( ans == 'Y' || ans == 'y'){
-            showAvrg = 1;
-            cinClean();
-            break;
-        }
-        else if ( ans == 'n' || ans == 'N'){
-            showAvrg = 0;
-            cinClean();
-            break;
-        }
-        else {
-            cout<<"\t"<<"Ivestis netinkama, prasome prasome pakartoti ivesti"<<endl;
-            cinClean();
-        }
-    }
-
-
-    cout<<"Ar norite kad pazymiai butu atsitiktinai sugeneruoti? y/n"<<endl;
-    while(1){
-        char ans;
-        cin>>ans;
-
-        if ( ans == 'Y' || ans == 'y'){
-
-            makeRandom = 1;
-            cinClean();
-            
-            cout<<"iveskite pazymiu kieki"<<endl;
-            while(1) {
-                cin>>pazKiek;
-                if(cin.fail()|| pazKiek<=0){
-                    cout<<"\t"<<"Ivestis netinkama, prasome prasome pakartoti ivesti"<<endl;
-                    cinClean();
-                }
-                else break;
-            }
-
-
-            break;
-        }
-        else if ( ans == 'n' || ans == 'N'){
-            makeRandom = 0;
-            cinClean();
-            break;
-        }
-        else {
-            cout<<"\t"<<"Ivestis netinkama, prasome prasome pakartoti ivesti"<<endl;
-            cinClean();
-        }
-    }
+    showAvrg = question("Ar norite kad rodytu galutini(vid) (y-vid / n-med)");
+    makeRandom = question("Ar norite kad pazymiai butu atsitiktinai sugeneruoti? y/n");
+    
 
    
    for(int i = 0; i<studKiek; i++){
@@ -178,12 +114,30 @@ int main(){
         studList[i].print();
     }
 
-
-
-
 }
+//------------main block------------------------
+bool question(string message){
+    cout<<message<<endl;
 
+    while(1){
+        char ans;
+        cin>>ans;
 
+        if ( ans == 'Y' || ans == 'y'){
+            cinClean();
+            return 1;
+        }
+        else if ( ans == 'n' || ans == 'N'){
+            cinClean();
+            return 0;
+        }
+        else {
+            cout<<"\t"<<"Ivestis netinkama, prasome prasome pakartoti ivesti"<<endl;
+            cinClean();
+        }
+
+    }
+}
 
 void cinClean(){
     cin.clear();
@@ -225,6 +179,7 @@ void getRandomGrades(vector<double> &grades, int pazKiek, double *examRez){
 
 void drawTitle(bool showAvrg){
     cout<<"\n\n\n\n\n\n\n\n\n\n";
+    
     cout<<"pavarde"<<"\t"<<"vardas"<<"\t";
     if(showAvrg==0) cout<<"galutinis(med.)"<<endl;
     else  cout<<"galutinis(vid.)"<<endl;
