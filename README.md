@@ -1,11 +1,27 @@
 # OP-2uzd v0.2
-Papildykite programos versiją (v0.1) taip, kad būtų galima duomenis ne tik įvesti bet ir nuskaityti iš failo. Todėl sukurkite ir užpildykite failą kursiokai.txt, kurio (pleriminari) struktūra:
+Papildykite programos versiją (v0.1) taip, kad būtų 
+ - galima duomenis ne tik įvesti bet ir nuskaityti iš failo. 
+ - tudentai turi būti surūšiuoti pagal vardus (ar pavardes)
+ - visi stulpeliai būtų gražiai "išlygiuoti".
 
-Papildykite programą taip, kad nuskaičiuos duomenis iš failo, išvedimas pleriminariai atrodytų taip:
+Nuskaičiuos duomenis iš failo, išvedimas pleriminariai turetu atrodytų taip:
 ```shell
 pavarde vardas galutinis(vid) galutinis(med)
 --------------------------------------------
 ```
+## Programos diegimas ir paleidimas
+- Atsiuskite programos versija is Releases
+- Komandinėje eilutėje įvykdykite sekančius veiksmus:
+```shell
+  cd nuoroda_į_programos_aplanką
+  make
 
+```
+arba
+```shell
+  cd nuoroda_į_programos_aplanką
+  g++ -c UI.cpp main.cpp
+  g++ -o my_program.exe UI.o main.o
+```
+programos paleidimas : ./my_program
 
-Reikalavimai output’ui: studentai turi būti surūšiuoti pagal vardus (ar pavardes) ir visi stulpeliai būtų gražiai "išlygiuoti".
