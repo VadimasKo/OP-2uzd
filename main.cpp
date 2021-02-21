@@ -90,7 +90,7 @@ int main(){
         sort(students.begin(),students.end());
         
         // print(fNameWidth,lNameWidth,students);
-        print(15,15,students);
+        print(25,25,students);
         
 
 
