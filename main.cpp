@@ -12,7 +12,7 @@ struct Student{
     void setFinalGrade(vector<double> &grades, double examRez){
         examRez *= 0.6;
         finalAvrg = ((getAverage(grades)*0.4) + examRez);
-        finalAvrg = ((getMedian(grades)*0.4) + examRez);
+        finalMed = ((getMedian(grades)*0.4) + examRez);
     }
 
     bool operator < (Student &obj) const {
@@ -25,51 +25,75 @@ void print(int , int , vector<Student>&student);
 
 int main(){
 
-    if(question("Ar norite daryti rankini ivedima")) userInputProgram();
+    if(question("Ar norite daryti rankini ivedima? y/n")) userInputProgram();
     else{
-        string line;
-        fstream data;
+
+        vector<Student> students;
         int fNameWidth = 0;
         int lNameWidth = 0;
-
-        data.open("kursiokai.txt");
-        while(!data.eof()) getline(data,line);
-        data.close();
-
-        stringstream stream(line);
-        vector<Student> students;
-
-        getline(stream, line); //get rid of first line
         
-        while(!stream.eof()){
+        string fileString;
+        fstream data;
+        data.open("kursiokai.txt");
+
+        while(!data.eof()){
+            string buffString;
+            getline(data,buffString);
+            buffString.append("\n");
+            fileString += buffString;
+        }
+
+        data.close();
+        
+        stringstream fileStream(fileString);
+        
+        getline(fileStream,fileString); //getting rid of first line, and emptying fileString 
+
+    
+        while(!fileStream.eof()){
+
+            string line;
+                getline(fileStream,line);
+            
+            if(fileStream.eof()) break;     //stream.eof() ==1 only after reading past end
+            
+            stringstream lineStream(line); 
+
+                
+            
+            vector <double> grades;
             Student buffStud;
-            vector<double> grades;
             double examRez;
 
-            getline(stream, line);
-            stringstream streamLine (line);
+            lineStream>>buffStud.fName>>buffStud.lName;
+            // if(buffStud.fName.size() > fNameWidth) fNameWidth =buffStud.fName.size;
+            //  if(buffStud.lName.size() > fNameWidth) lNameWidth =buffStud.lName.size;
 
-            streamLine>>buffStud.fName>>buffStud.lName;
+            while(!lineStream.eof()){
 
-            if(buffStud.fName.size()>fNameWidth) fNameWidth = buffStud.fName.size();
-            else if(buffStud.lName.size()>lNameWidth) lNameWidth = buffStud.lName.size();
-        
-            while(!streamLine.eof()){
                 double buffDouble;
+                lineStream>>buffDouble;
 
-                streamLine>>buffDouble;
-                if(streamLine.eof()) examRez = buffDouble;
+                if(lineStream.eof()) examRez = buffDouble;
                 else grades.push_back(buffDouble);
+
             }
 
-            buffStud.setFinalGrade(grades, examRez);
+            buffStud.setFinalGrade(grades,examRez);
+            grades.clear();
 
             students.push_back(buffStud);
-            grades.clear();
+
+            //  cout<<buffStud.fName<<"  "<<buffStud.lName<<"  "<<buffStud.finalMed<<"  "<<buffStud.finalAvrg<<endl;    
         }
 
         sort(students.begin(),students.end());
-        print(fNameWidth,lNameWidth,students);
+        
+        // print(fNameWidth,lNameWidth,students);
+        print(15,15,students);
+        
+
+
     }
 }
 
@@ -78,33 +102,33 @@ void print(int fNameWidth, int lNameWidth, vector<Student> &students){
    
 
     stringstream outputStream;
-    outputStream<<setw(fNameWidth+3); outputStream<<std::left<<"vardas";
-    outputStream<<setw(lNameWidth+3); outputStream<<std::right<<"pavarde";
-    outputStream<<setw(5); outputStream<<std::right<<"Galutinis(Med)";
-    outputStream<<setw(5); outputStream<<std::right<<"Galutinis(Vid)"<<'\n';
-    string line(16+fNameWidth+lNameWidth, '-');
-    outputStream<<line;
+    outputStream<<setw(fNameWidth+3); outputStream<<std::left<<"vardas ";
+    outputStream<<setw(lNameWidth+3); outputStream<<std::right<<"pavarde ";
+    outputStream<<setw(15); outputStream<<std::right<<"Galutinis(Med) ";
+    outputStream<<setw(15); outputStream<<std::right<<"Galutinis(Vid) "<<'\n';
+    string line(36+fNameWidth+lNameWidth, '-');
+    outputStream<<line<<'\n';
 
-    cout<<students.size();
 
     for(int i = 0; i<students.size(); i++){
-        // outputStream<<setw(fNameWidth+3); outputStream<<std::left<<students[i].fName;  //https://www.cplusplus.com/reference/ios/left/
-        // outputStream<<setw(lNameWidth+3); outputStream<<std::right<<students[i].lName;
-        // outputStream.precision(2);
-        // outputStream<<fixed;
-        // outputStream<<setw(5); outputStream<<std::right<<students[i].finalMed;
-        // outputStream<<setw(5); outputStream<<std::right<<students[i].finalAvrg<<'\n';
+        outputStream<<setw(fNameWidth+3); outputStream<<std::left<<students[i].fName;  //https://www.cplusplus.com/reference/ios/left/
+        outputStream<<setw(lNameWidth+3); outputStream<<std::right<<students[i].lName;
+        outputStream.precision(2);
+        outputStream<<fixed;
+        outputStream<<setw(15); outputStream<<std::right<<students[i].finalMed;
+        outputStream<<setw(15); outputStream<<std::right<<students[i].finalAvrg<<'\n';
 
-        cout<<setw(fNameWidth+3); cout<<std::left<<students[i].fName;  //https://www.cplusplus.com/reference/ios/left/
-        cout<<setw(lNameWidth+3); cout<<std::right<<students[i].lName;
-        cout.precision(2);
-        cout<<fixed;
-        cout<<setw(5); cout<<std::right<<students[i].finalMed;
-        cout<<setw(5); cout<<std::right<<students[i].finalAvrg<<'\n';
+        // cout<<setw(fNameWidth+3); cout<<std::left<<students[i].fName;  //https://www.cplusplus.com/reference/ios/left/
+        // cout<<setw(lNameWidth+3); cout<<std::right<<students[i].lName;
+        // cout.precision(2);
+        // cout<<fixed;
+        // cout<<setw(7); cout<<std::right<<students[i].finalMed;
+        // cout<<setw(7); cout<<std::right<<students[i].finalAvrg<<'\n';
          
          
         
     }
+
 
     line = outputStream.str();
 
