@@ -116,17 +116,7 @@ void print(int fNameWidth, int lNameWidth, vector<Student> &students){
         outputStream.precision(2);
         outputStream<<fixed;
         outputStream<<setw(15); outputStream<<std::right<<students[i].finalMed;
-        outputStream<<setw(15); outputStream<<std::right<<students[i].finalAvrg<<'\n';
-
-        // cout<<setw(fNameWidth+3); cout<<std::left<<students[i].fName;  //https://www.cplusplus.com/reference/ios/left/
-        // cout<<setw(lNameWidth+3); cout<<std::right<<students[i].lName;
-        // cout.precision(2);
-        // cout<<fixed;
-        // cout<<setw(7); cout<<std::right<<students[i].finalMed;
-        // cout<<setw(7); cout<<std::right<<students[i].finalAvrg<<'\n';
-         
-         
-        
+        outputStream<<setw(15); outputStream<<std::right<<students[i].finalAvrg<<'\n';      
     }
 
 
