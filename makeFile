@@ -1,3 +1,0 @@
-g++ -c main.cpp UI.cpp
-g++ -o my_program.exe UI.o main.o
-rm main.o my_program.exe UI.o
