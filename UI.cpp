@@ -1,10 +1,23 @@
 #include "UI.hpp"
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <vector>
+#include <algorithm> //std::sort
+
+using std::endl;
+using std::cout;
+using std::cin;
+using std::vector;
+using std::string;
+using std::fixed;
+
 
 void getRandomGrades(vector<double> &grades, int pazKiek, double *examRez);
 void drawTitle(bool showAvrg);
 
 
-struct Student{
+struct UIstudent{
 
     string fName,lName;
     double finalGrade;
@@ -34,7 +47,7 @@ void userInputProgram(){
     bool showAvrg, makeRandom;
 
     //gauname pradinius parametrus
-    cout<<"Sveiki, prasome ivesti studentu kieki!"<<endl;
+    cout<<"Sveiki, prasome ivesti Studentu kieki!"<<endl;
     while(1){
         cin>>studKiek;
         if(studKiek<=0 || cin.fail()){
@@ -44,7 +57,7 @@ void userInputProgram(){
         else break;
     }
 
-    Student studList[studKiek];
+    UIstudent studList[studKiek];
 
     showAvrg = question("Ar norite kad rodytu galutini(vid) (y-vid / n-med)");
     makeRandom = question("Ar norite kad pazymiai butu atsitiktinai sugeneruoti? y/n");

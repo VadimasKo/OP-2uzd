@@ -1,30 +1,32 @@
 #include <sstream>
 #include <fstream>
 #include "UI.hpp"
+#include "StudentStruct.hpp"
 #include <exception>
+
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <vector>
+#include <algorithm> //std::sort
 
 using std::stringstream;
 using std::exception;
+using std::endl;
+using std::cout;
+using std::cin;
+using std::vector;
+using std::string;
+using std::fixed;
+using std::ifstream;
+using std::ofstream;
+using std::fstream;
+using std::setw;
+
 
 class StringToDoubleError{};
 class GradeValueError{};
 
-struct Student{
-    string fName, lName;
-    double finalMed, finalAvrg;
-
-
-    void setFinalGrade(vector<double> &grades, double examRez){
-        examRez *= 0.6;
-        finalAvrg = ((getAverage(grades)*0.4) + examRez);
-        finalMed = ((getMedian(grades)*0.4) + examRez);
-    }
-
-    bool operator < (Student &obj) const {
-        return (fName < obj.fName);
-    }
-
-};
 
 void print(int , int , vector<Student>&student);
 
