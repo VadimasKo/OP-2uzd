@@ -1,14 +1,9 @@
-# OP-2uzd v0.2
-Papildykite programos versiją (v0.1) taip, kad būtų 
- - galima duomenis ne tik įvesti bet ir nuskaityti iš failo. 
- - tudentai turi būti surūšiuoti pagal vardus (ar pavardes)
- - visi stulpeliai būtų gražiai "išlygiuoti".
+# OP-2uzd v0.3
+Papildykite programos versiją (v0.3) taip, 
+ - Kur tikslinga, programoje naudokite (jeigu dar nenaudojote) struct'ūras;
+ - Funkcijas, naujus duomenų tipus (struct’ūras) perkelkite į antraštinius (angl. header (*.h)) failus, t.y. tokiu būdu turėtumete sukurtame projekte turėti kelis *.cpp failus, kaip ir kelis *.h failus.
+ - Kur tikslinga, bent minimaliai panaudokite išimčių valdymą (angl. Exception Handling)
 
-Nuskaičiuos duomenis iš failo, išvedimas pleriminariai turetu atrodytų taip:
-```shell
-pavarde vardas galutinis(vid) galutinis(med)
---------------------------------------------
-```
 ## Programos diegimas ir paleidimas
 - Atsiuskite programos versija is Releases
 - Komandinėje eilutėje įvykdykite sekančius veiksmus:
@@ -16,12 +11,6 @@ pavarde vardas galutinis(vid) galutinis(med)
   cd nuoroda_į_programos_aplanką
   make
 
-```
-arba
-```shell
-  cd nuoroda_į_programos_aplanką
-  g++ -c UI.cpp main.cpp
-  g++ -o my_program.exe UI.o main.o
 ```
 programos paleidimas : ./my_program
 
