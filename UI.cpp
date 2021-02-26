@@ -161,7 +161,7 @@ double getMedian(vector<double> &grades){
 
     if(grades.size()%2 == 1) median = grades[grades.size()/2];
     
-    else  median = grades[grades.size()/2] + grades[(grades.size()/2)- 1];
+    else  median = (grades[grades.size()/2] + grades[(grades.size()/2)- 1])/2;
 
     return median;
    
