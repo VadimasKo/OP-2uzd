@@ -1,8 +1,13 @@
 #include <sstream>
 #include <fstream>
 #include "UI.hpp"
+#include <exception>
 
 using std::stringstream;
+using std::exception;
+
+class StringToDoubleError{};
+class GradeValueError{};
 
 struct Student{
     string fName, lName;
@@ -33,17 +38,27 @@ int main(){
         int lNameWidth = 0;
         
         string fileString;
-        fstream data;
-        data.open("kursiokai.txt");
+        
+        try{
+            fstream data;
+            data.open("kursiokai.txt");
+            if( data.fail()) throw exception();
 
-        while(!data.eof()){
-            string buffString;
-            getline(data,buffString);
-            buffString.append("\n");
-            fileString += buffString;
+            while(!data.eof()){
+                string buffString;
+                getline(data,buffString);
+                buffString.append("\n");
+                fileString += buffString;
+            }
+
+            data.close();
         }
-
-        data.close();
+        catch(const exception& e){
+            cout<<"Exception: Unable to open the file"<<endl;
+            exit(1);
+        }
+    
+       
         
         stringstream fileStream(fileString);
         
@@ -69,14 +84,31 @@ int main(){
             // if(buffStud.fName.size() > fNameWidth) fNameWidth =buffStud.fName.size;
             //  if(buffStud.lName.size() > fNameWidth) lNameWidth =buffStud.lName.size;
 
-            while(!lineStream.eof()){
+            try{   
+
+                while(!lineStream.eof()){
 
                 double buffDouble;
                 lineStream>>buffDouble;
 
+                if(lineStream.fail()) throw StringToDoubleError();
+                if(buffDouble<0 || buffDouble>10) throw GradeValueError();
+
+
                 if(lineStream.eof()) examRez = buffDouble;
                 else grades.push_back(buffDouble);
 
+                }
+            }
+            catch (StringToDoubleError& e){
+                cout<<"Exception: Wrong input type in grades, line:"<<students.size()+2<<endl;
+                grades.clear();
+                continue;
+            }
+            catch (GradeValueError& e){
+                cout<<"Exception: Wrong input grade value, line:"<<students.size()+2<<endl;
+                grades.clear();
+                continue;
             }
 
             buffStud.setFinalGrade(grades,examRez);
