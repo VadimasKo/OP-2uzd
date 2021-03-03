@@ -1,18 +1,22 @@
-main: main.o UI.o Struct.o
-	g++ -o my_program.exe UI.o main.o StudentStruct.o
+main: main.o UserInput.o BasicFunctions.o GenerateRandom.o
+	cd ProjectFiles && g++ -o my_program.exe UserInput.o main.o BasicFunctions.o GenerateRandom.o  && mv my_program.exe ../my_program.exe
 
 main.o:
-	g++ -c main.cpp
+	cd Source && g++ -c main.cpp && mv main.o ../ProjectFiles/main.o
 
-UI.o:
-	g++ -c UI.cpp
+UserInput.o:
+	cd Source && g++ -c UserInput.cpp && mv UserInput.o ../ProjectFiles/UserInput.o
 
-Struct.o:
-	g++ -c StudentStruct.cpp
+GenerateRandom.o:
+	cd Source && g++ -c GenerateRandom.cpp && mv GenerateRandom.o ../ProjectFiles/GenerateRandom.o
 
+
+BasicFunctions.o:
+	cd Source && g++ -c BasicFunctions.cpp && mv BasicFunctions.o ../ProjectFiles/BasicFunctions.o
 
 clean:
-	rm main.o my_program.exe UI.o StudentStruct.o results.txt
+	cd ProjectFiles &&  rm *.o && cd .. && rm *.o my_program.exe
 
 remove_o:
-	rm main.o  UI.o Struct.o
+	cd ProjectFiles && rm *.o
+
