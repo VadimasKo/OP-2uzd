@@ -1,12 +1,12 @@
 #include "../Include/UserInput.hpp"
 #include "../Include/BasicFunctions.hpp"
-#include "../Include/GenerateRandom.hpp"
+#include "../Include/StudentStruct.hpp"
+
 
 #include <iostream>
 
 int main(){
 
-    // question("test");
-    // userInputProgram();
-    for (int i = 0; i<25; i++) std::cout<<getRandom()<<std::endl;
+    Student students(4);
+    std::cout<<students.fName<<" "<<students.lName<<" "<<students.finalMed<<" "<<students.finalAvrg;
 }

@@ -7,11 +7,11 @@
 struct Student{
     std::string fName, lName;
     double finalMed, finalAvrg;
+    
+    Student(int makeRandom);
 
     void setFinalGrade(std::vector<double> &grades, double examRez);
     bool operator < (Student &obj) const;
 };
-
-
 
 #endif
