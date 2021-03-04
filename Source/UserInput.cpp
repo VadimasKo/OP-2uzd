@@ -33,7 +33,7 @@ void userInputProgram(){
     while(1){
         cin>>studKiek;
         if(studKiek<=0 || cin.fail()){
-            cout<<"\t"<<"Ivestis netinkama, prasome prasome pakartoti ivesti"<<endl;
+            cout<<"Ivestis netinkama, prasome prasome pakartoti ivesti"<<endl;
             cinClean();
         }
         else break;

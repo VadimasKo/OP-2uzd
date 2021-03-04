@@ -15,7 +15,7 @@ BasicFunctions.o:
 	cd Source && g++ -c BasicFunctions.cpp && mv BasicFunctions.o ../ProjectFiles/BasicFunctions.o
 
 clean:
-	cd ProjectFiles &&  rm *.o && cd .. && rm  my_program.exe
+	cd ProjectFiles &&  rm *.o && cd .. && rm  my_program.exe results.txt
 
 remove_o:
 	cd ProjectFiles && rm *.o
