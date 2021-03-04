@@ -17,15 +17,20 @@ double getAverage(vector<double> &grades){
 
     for(int i = 0; i<grades.size(); i++) sum +=grades[i];
 
-    return sum;
+    if(sum==0) return sum;
+    else   return sum/grades.size();
 }
 
 double getMedian(vector<double> &grades){
     sort(grades.begin(), grades.end());
 
-    if(grades.size()%2 == 1) return grades[grades.size()/2];
+    if(grades.size()==0) return 0;
+    else{
 
-    else  return grades[grades.size()/2] + grades[(grades.size()/2)- 1];
+        if(grades.size()%2 == 1) return grades[grades.size()/2];
+        else  return grades[grades.size()/2] + grades[(grades.size()/2)- 1];
+    }
+        
 }
 
 

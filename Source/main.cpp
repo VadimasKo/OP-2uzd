@@ -7,6 +7,7 @@
 
 int main(){
 
-    Student students(4);
-    std::cout<<students.fName<<" "<<students.lName<<" "<<students.finalMed<<" "<<students.finalAvrg;
+    
+
+   userInputProgram();
 }

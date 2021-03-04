@@ -18,7 +18,7 @@ class RandInt{
 };
 
 
-Student::Student(int makeRandom){
+void Student::makeRandom(){
 
     string names[10] = {"Lėja", "Amelija", "Emilija", "Sofija", "Gabija", "Benas", "Markas", "Lukas", "Matas", "Nojus"};
     string surnames[10] = {"Broom", "Car", "Far", "Doorman", "Shroom", "VaatiVidya", "Internet", "Historian", "Kjellberg", "Rober"};
