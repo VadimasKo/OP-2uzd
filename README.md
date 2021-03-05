@@ -20,8 +20,8 @@
   Vardas1                 Pavarde1                      3        10         8         1         7       0        2
   ...
 ```
- - - Pirmos eilutes formatas nesvarbus
- - - Nuo antros eilutes prasideda studentu duomenys : vardas, pavarde, namu darbu ivertinimai[0-10], egzamino ivertinimas [0-10]
+   - Pirmos eilutes formatas nesvarbus
+   - Nuo antros eilutes prasideda studentu duomenys : vardas, pavarde, namu darbu ivertinimai[0-10], egzamino ivertinimas [0-10]
 
 
 ## Programos diegimas ir paleidimas
