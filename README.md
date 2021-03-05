@@ -5,9 +5,15 @@
 - Apskaiciuoja galutini rezultata naudojant mediana ir vidurki
 - Pateikia surusiuotus duomenys
 
+## v0.4 pokyciai
+- programos file'ai surusioti i skirtingus aplankalus
+- Patobulintas random generavimas
+-
+
+
 
 ## Pradiniu duomenu pavyzdis
--"kursiokai.txt"
+- "kursiokai.txt"
 ```shell
   Vardas                   Pavarde                    ND1       ND2       ND3       ND4       ND5     NDx      Egz.
   Vardas1                 Pavarde1                      3        10         8         1         7       0        2
