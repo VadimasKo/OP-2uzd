@@ -41,19 +41,16 @@ int main(){
         vector<Student> students;
 
         string fileString;
-        
+
+    
+       
+        stringstream fileStream;
         try{
             fstream data;
             data.open("kursiokai.txt");
             if( data.fail()) throw exception();
-
-            while(!data.eof()){
-                string buffString;
-                getline(data,buffString);
-                buffString.append("\n");
-                fileString += buffString;
-            }
-
+            fileStream << data.rdbuf();
+           
             data.close();
         }
         catch(const exception& e){
@@ -62,16 +59,11 @@ int main(){
         }
     
        
-        
-        stringstream fileStream(fileString);
-        
-        getline(fileStream,fileString); //getting rid of first line, and emptying fileString 
+        string line;
+        getline(fileStream,line); //getting rid of first line
 
-    
         while(!fileStream.eof()){
-
-            string line;
-                getline(fileStream,line);
+            getline(fileStream,line);
             
             if(fileStream.eof()) break;     //stream.eof() ==1 only after reading past end
             
