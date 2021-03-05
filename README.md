@@ -1,9 +1,9 @@
 # OP-2uzd
 
 ## Ka daro?
--nuskaito studentu duomenys, is .txt file'o arba naudojant UserInput
--Apskaiciuoja galutine rezultata naudojant mediana ir vidurki
--Pateikia surusiuotus duomenys
+- nuskaito studentu duomenys, is .txt file'o arba naudojant UserInput
+- Apskaiciuoja galutine rezultata naudojant mediana ir vidurki
+- Pateikia surusiuotus duomenys
 
 
 ## Pradiniu duomenu pavyzdis
