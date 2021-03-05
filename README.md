@@ -5,7 +5,7 @@
 - Apskaiciuoja galutini rezultata naudojant mediana ir vidurki
 - Pateikia surusiuotus duomenys
 
-## v0.4 pokyciai
+### v0.4 pokyciai
 - programos file'ai surusioti i skirtingus aplankalus
 - Patobulintas random generavimas
 - rezultatai pateikiami i  islaike.txt (galutinis(vid) >= 5) ir  skolininkai.txt (galutinis(vid) <5)
