@@ -5,6 +5,16 @@
 - Apskaiciuoja galutini rezultata naudojant mediana ir vidurki
 - Pateikia surusiuotus duomenys
 
+## Pokyciu logas
+### v0.1 pokyciai
+- x
+- x
+### v0.2 pokyciai
+- x
+- x
+### v0.3 pokyciai
+- x
+- x
 ### v0.4 pokyciai
 - programos file'ai surusioti i skirtingus aplankalus
 - Patobulintas random generavimas
