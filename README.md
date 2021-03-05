@@ -8,7 +8,7 @@
 ## v0.4 pokyciai
 - programos file'ai surusioti i skirtingus aplankalus
 - Patobulintas random generavimas
-- rezultatai pateikiami i  islaike.txt (galutinis >= 5) ir  skolininkai.txt (galutinis <5)
+- rezultatai pateikiami i  islaike.txt (galutinis(vid) >= 5) ir  skolininkai.txt (galutinis(vid) <5)
 - programa pateikia ivairiu jos daliu darbo laika
 
 
@@ -20,8 +20,8 @@
   Vardas1                 Pavarde1                      3        10         8         1         7       0        2
   ...
 ```
- -Pirmos eilutes formatas nesvarbus
- -Nuo antros eilutes prasideda studentu duomenys : vardas, pavarde, namu darbu ivertinimai[0-10], egzamino ivertinimas [0-10]
+ - - Pirmos eilutes formatas nesvarbus
+ - - Nuo antros eilutes prasideda studentu duomenys : vardas, pavarde, namu darbu ivertinimai[0-10], egzamino ivertinimas [0-10]
 
 
 ## Programos diegimas ir paleidimas
