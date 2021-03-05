@@ -6,6 +6,9 @@
 using std::vector;
 using std::string;
 
+const string names[10] = {"Lėja", "Amelija", "Emilija", "Sofija", "Gabija", "Benas", "Markas", "Lukas", "Matas", "Nojus"};
+const string surnames[10] = {"Broom", "Car", "Far", "Doorman", "Shroom", "VaatiVidya", "Internet", "Historian", "Kjellberg", "Rober"};
+
 
 class RandInt{
     public:
@@ -20,8 +23,6 @@ class RandInt{
 
 void Student::makeRandom(){
 
-    string names[10] = {"Lėja", "Amelija", "Emilija", "Sofija", "Gabija", "Benas", "Markas", "Lukas", "Matas", "Nojus"};
-    string surnames[10] = {"Broom", "Car", "Far", "Doorman", "Shroom", "VaatiVidya", "Internet", "Historian", "Kjellberg", "Rober"};
 
     RandInt rnd {0,10};
 

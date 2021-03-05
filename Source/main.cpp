@@ -1,6 +1,7 @@
 #include "../Include/UserInput.hpp"
 #include "../Include/BasicFunctions.hpp"
 #include "../Include/StudentStruct.hpp"
+#include "../Include/RandomToFile.hpp"
 
 
 #include <iostream>
@@ -33,8 +34,8 @@ class GradeValueError{};
 
 int main(){
 
-   if(question("Ar norite daryti rankini ivedima? ")) userInputProgram();
-   else{
+  if(question("Ar norite daryti rankini ivedima? ")) userInputProgram();  
+    else{
 
         vector<Student> students;
 
@@ -113,7 +114,7 @@ int main(){
         sort(students.begin(),students.end());
         
         // print(fNameWidth,lNameWidth,students);
-        print(students);
+        print(students, "islaike.txt");
         
 
 

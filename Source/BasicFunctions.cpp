@@ -73,7 +73,7 @@ bool question(string message){
     }
 }
 
-void print(vector<Student> &students){
+void print(vector<Student> &students, string file){
    
 
     stringstream outputStream;
@@ -98,7 +98,7 @@ void print(vector<Student> &students){
     line = outputStream.str();
 
     ofstream rez;
-    rez.open("results.txt");
+    rez.open(file);
     rez<<line;
     rez.close();
 
