@@ -51,7 +51,7 @@ void cinClean(){
 
 
 bool question(string message){
-    cout<<message<<" y/n "<<endl;
+    cout<<message<<" y/n ";
 
     while(1){
         char ans;
