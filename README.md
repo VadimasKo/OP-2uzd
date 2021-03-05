@@ -9,8 +9,8 @@
 ## Pradiniu duomenu pavyzdis
 -"kursiokai.txt"
 ```shell
-  Vardas                   Pavarde                    ND1       ND2       ND3       ND4       ND5       ND6       ND7      Egz.
-  Vardas1                 Pavarde1                      3        10         8         1         7         4         6         2
+  Vardas                   Pavarde                    ND1       ND2       ND3       ND4       ND5     NDx      Egz.
+  Vardas1                 Pavarde1                      3        10         8         1         7       0        2
   ...
 ```
  -Pirmos eilutes formatas nesvarbus
