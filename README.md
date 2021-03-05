@@ -32,16 +32,16 @@
 4. programos paleidimas :   ./my_program
 
 ## Pokyciu logas
-### v0.1 pokyciai
+#### v0.1 pokyciai
 - x
 - x
-### v0.2 pokyciai
+#### v0.2 pokyciai
 - x
 - x
-### v0.3 pokyciai
+#### v0.3 pokyciai
 - x
 - x
-### v0.4 pokyciai
+#### v0.4 pokyciai
 - programos file'ai surusioti i skirtingus aplankalus
 - Patobulintas random generavimas
 - rezultatai pateikiami i  islaike.txt (galutinis(vid) >= 5) ir  skolininkai.txt (galutinis(vid) <5)
