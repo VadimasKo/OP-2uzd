@@ -8,7 +8,8 @@
 ## v0.4 pokyciai
 - programos file'ai surusioti i skirtingus aplankalus
 - Patobulintas random generavimas
--
+- rezultatai pateikiami i  islaike.txt (galutinis >= 5) ir  skolininkai.txt (galutinis <5)
+- programa pateikia ivairiu jos daliu darbo laika
 
 
 
