@@ -20,3 +20,5 @@ clean:
 remove_o:
 	cd ProjectFiles && rm *.o
 
+unpack:
+	mkdir ProjectFiles
