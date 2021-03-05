@@ -1,7 +1,17 @@
 #include "../Include/BasicFunctions.hpp"
+#include "../Include/StudentStruct.hpp"
 
 #include <algorithm>
 #include <iostream>
+#include <sstream>
+#include <fstream>
+#include <iomanip>
+
+using std::setw;
+using std::fixed;
+using std::stringstream;
+using std::ofstream;
+
 
 
 using std::vector;
@@ -61,4 +71,35 @@ bool question(string message){
         }
 
     }
+}
+
+void print(vector<Student> &students){
+   
+
+    stringstream outputStream;
+    outputStream<<setw(25); outputStream<<std::left<<"vardas ";
+    outputStream<<setw(25); outputStream<<std::right<<"pavarde ";
+    outputStream<<setw(25); outputStream<<std::right<<"Galutinis(Med) ";
+    outputStream<<setw(25); outputStream<<std::right<<"Galutinis(Vid) "<<'\n';
+    string line(100, '-');
+    outputStream<<line<<'\n';
+
+
+    for(int i = 0; i<students.size(); i++){
+        outputStream<<setw(25); outputStream<<std::left<<students[i].fName;  //https://www.cplusplus.com/reference/ios/left/
+        outputStream<<setw(25); outputStream<<std::right<<students[i].lName;
+        outputStream.precision(2);
+        outputStream<<fixed;
+        outputStream<<setw(25); outputStream<<std::right<<students[i].finalMed;
+        outputStream<<setw(25); outputStream<<std::right<<students[i].finalAvrg<<'\n';      
+    }
+
+
+    line = outputStream.str();
+
+    ofstream rez;
+    rez.open("results.txt");
+    rez<<line;
+    rez.close();
+
 }

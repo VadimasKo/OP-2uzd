@@ -49,5 +49,5 @@ void Student::setFinalGrade(vector<double> &grades, double examRez){
 }
 
 bool Student::operator < (Student &obj) const {
-    return (fName < obj.fName);
+    return (finalAvrg < obj.finalAvrg);
 }

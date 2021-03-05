@@ -27,8 +27,6 @@ using std::ofstream;
 using std::exception;
 using std::fixed;
 
-void print(vector<Student> &students);
-
 class StringToDoubleError{};
 class GradeValueError{};
 
@@ -120,36 +118,4 @@ int main(){
 
 
     }
-}
-
-
-void print(vector<Student> &students){
-   
-
-    stringstream outputStream;
-    outputStream<<setw(25); outputStream<<std::left<<"vardas ";
-    outputStream<<setw(25); outputStream<<std::right<<"pavarde ";
-    outputStream<<setw(25); outputStream<<std::right<<"Galutinis(Med) ";
-    outputStream<<setw(25); outputStream<<std::right<<"Galutinis(Vid) "<<'\n';
-    string line(100, '-');
-    outputStream<<line<<'\n';
-
-
-    for(int i = 0; i<students.size(); i++){
-        outputStream<<setw(25); outputStream<<std::left<<students[i].fName;  //https://www.cplusplus.com/reference/ios/left/
-        outputStream<<setw(25); outputStream<<std::right<<students[i].lName;
-        outputStream.precision(2);
-        outputStream<<fixed;
-        outputStream<<setw(25); outputStream<<std::right<<students[i].finalMed;
-        outputStream<<setw(25); outputStream<<std::right<<students[i].finalAvrg<<'\n';      
-    }
-
-
-    line = outputStream.str();
-
-    ofstream rez;
-    rez.open("results.txt");
-    rez<<line;
-    rez.close();
-
 }
