@@ -21,7 +21,7 @@
   ...
 ```
   - - Second item Pirmos eilutes formatas nesvarbus
-  - - Second item Nuo antros eilutes prasideda studentu duomenys : vardas, pavarde, namu darbu ivertinimai[0-10], egzamino ivertinimas [0-10]
+    - Second item Nuo antros eilutes prasideda studentu duomenys : vardas, pavarde, namu darbu ivertinimai[0-10], egzamino ivertinimas [0-10]
 
 
 ## Programos diegimas ir paleidimas
