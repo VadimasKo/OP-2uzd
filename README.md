@@ -1,4 +1,4 @@
-# OP-2uzd
+# Pazymiu skaiciuokle
 
 ## Ka daro?
 - nuskaito studentu duomenys, is .txt file'o arba naudojant UserInput
