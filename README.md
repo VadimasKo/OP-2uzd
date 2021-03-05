@@ -5,24 +5,6 @@
 - Apskaiciuoja galutini rezultata naudojant mediana ir vidurki
 - Pateikia surusiuotus duomenys
 
-## Pokyciu logas
-### v0.1 pokyciai
-- x
-- x
-### v0.2 pokyciai
-- x
-- x
-### v0.3 pokyciai
-- x
-- x
-### v0.4 pokyciai
-- programos file'ai surusioti i skirtingus aplankalus
-- Patobulintas random generavimas
-- rezultatai pateikiami i  islaike.txt (galutinis(vid) >= 5) ir  skolininkai.txt (galutinis(vid) <5)
-- programa pateikia ivairiu jos daliu darbo laika
-
-
-
 ## Pradiniu duomenu pavyzdis
 - "kursiokai.txt"
 ```shell
@@ -46,4 +28,22 @@
 ```
 - jeigu make unpack nesukure ProjectFiles, sukurkite ji patys  
 - programos paleidimas :   ./my_program
+
+## Pokyciu logas
+### v0.1 pokyciai
+- x
+- x
+### v0.2 pokyciai
+- x
+- x
+### v0.3 pokyciai
+- x
+- x
+### v0.4 pokyciai
+- programos file'ai surusioti i skirtingus aplankalus
+- Patobulintas random generavimas
+- rezultatai pateikiami i  islaike.txt (galutinis(vid) >= 5) ir  skolininkai.txt (galutinis(vid) <5)
+- programa pateikia ivairiu jos daliu darbo laika
+
+
 
