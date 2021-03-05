@@ -28,5 +28,5 @@
 
 ```
 - jeigu make unpack nesukure ProjectFiles, sukurkite ji patys  
-- programos paleidimas : ./my_program
+- programos paleidimas :   ./my_program
 
