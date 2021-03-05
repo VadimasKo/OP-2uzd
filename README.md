@@ -27,7 +27,7 @@
   ./my_program
 
 ```
-3. jeigu make unpack nesukure ProjectFiles, sukurkite ji patys  
+3. jeigu make unpack nesukure ProjectFiles aplankalo, sukurkite ji patys  
 
 4. programos paleidimas :   ./my_program
 
