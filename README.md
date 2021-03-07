@@ -15,7 +15,7 @@
   ...
 ```
 
-## Programos sparta
+## Programos veikimo sparta
 
 | size     | Creation time | Input duration  | Sorting duration  | Output duration |
 |----------|---------------|-----------------|-------------------|-----------------|
