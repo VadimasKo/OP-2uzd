@@ -15,7 +15,15 @@
   ...
 ```
 
+## Programos sparta
 
+| size     | Creation time | Input duration  | Sorting duration  | Output duration |
+|----------|---------------|-----------------|-------------------|-----------------|
+| 1000     | 0.03s         | 0.005s          | 0.001s            | 0.005s          |
+| 10000    | 0.2s          | 0.042s          | 0.006s            | 0.009s          |
+| 100000   | 1.8s          | 0.203s          | 0.063s            | 0.093s          |
+| 1000000  | 17.28s        | 1.818s          | 0.729s            | 1.222s          |
+| 10000000 | 158.14s       | 16.744s         | 8.693s            | 10.360s         |
 
 ## Programos diegimas ir paleidimas
 1. Atsiuskite programos versija is Releases
@@ -24,12 +32,10 @@
   cd nuoroda_į_programos_aplanką
   make unpack
   make
-  ./my_program
-
 ```
 3. jeigu make unpack nesukure ProjectFiles aplankalo, sukurkite ji patys  
 
-4. programos paleidimas :   ./my_program
+4. programos paleidimas :   ./my_program arba ./my_program input.txt 
 
 ## Pokyciu logas
 #### v0.1 pokyciai
