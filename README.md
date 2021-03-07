@@ -25,6 +25,8 @@
 | 1000000  | 17.28s        | 1.818s          | 0.729s            | 1.222s          |
 | 10000000 | 158.14s       | 16.744s         | 8.693s            | 10.360s         |
 
+*Programa buvo testuojama naudojant tik 2 pazymius
+
 ## Programos diegimas ir paleidimas
 1. Atsiuskite programos versija is Releases
 2. Komandinėje eilutėje įvykdykite sekančius veiksmus:
