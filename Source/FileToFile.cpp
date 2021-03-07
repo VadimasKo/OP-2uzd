@@ -104,8 +104,21 @@ void fileToFile(string input){
     }
 
     sort(students.begin(),students.end());
+
+
+    long int it;
+    for(it = 0; it<students.size(); it++) if(students[it].finalAvrg >= 5) break; 
+
+    vector<Student>::const_iterator first = students.begin()+it;
+    vector<Student>::const_iterator last = students.end();
+
+    vector<Student> islaike(first,last);
     
- 
-    print(students, "islaike.txt");
+    students.resize(it+1);
+
+    print(islaike, "islaike.txt");
+    print(students, "skolininkai.txt");
     
+    islaike.clear();
+    students.clear();
 }
