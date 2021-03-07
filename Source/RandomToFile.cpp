@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <vector>
+#include <chrono>
 
 using std::cout;
 using std::endl;
@@ -25,22 +26,32 @@ void randomToFile(){
         else break;
     }
 
-    vector<Student> skolininkai;
-    skolininkai.reserve(studKiek/2);
+std::chrono::time_point<std::chrono::high_resolution_clock> start_input, end_input;
+std::chrono::time_point<std::chrono::high_resolution_clock> start_output, end_output;  
 
-    vector<Student> islaike;
-    islaike.reserve(studKiek/2 + studKiek%2);
+start_input = std::chrono::high_resolution_clock::now(); 
 
+    vector<Student> studentai;
+    studentai.reserve(studKiek);
+    
     for(int i = 0; i<studKiek; i++){
         Student buffStud;
         buffStud.makeRandom();
-        if(buffStud.finalAvrg < 5) skolininkai.push_back(buffStud);
-        else islaike.push_back(buffStud);
+        studentai.push_back(buffStud);
     }
 
-    print(skolininkai, "skolininkai.txt");
-    skolininkai.clear();
-    print(islaike, "islaike.txt");
-    islaike.clear();
+end_input = std::chrono::high_resolution_clock::now();
+
+start_output = std::chrono::high_resolution_clock::now(); 
+    print(studentai, "studentai.txt", false);
+    studentai.clear();
+end_output = std::chrono::high_resolution_clock::now();
+
+
+std::chrono::duration<double> input_dur = end_input - start_input;
+std::chrono::duration<double> output_dur = end_output - start_output; 
+
+cout<<studKiek<<" irasu sukurimo trukme: "<<input_dur.count()<<"s"<<endl;
+cout<<studKiek<<" irasu isvedimo trukme: "<<output_dur.count()<<"s"<<endl;
 
 }

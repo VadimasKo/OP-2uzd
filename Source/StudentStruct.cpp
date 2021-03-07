@@ -6,8 +6,8 @@
 using std::vector;
 using std::string;
 
-const string names[10] = {"Lėja", "Amelija", "Emilija", "Sofija", "Gabija", "Benas", "Markas", "Lukas", "Matas", "Nojus"};
-const string surnames[10] = {"Broom", "Car", "Far", "Doorman", "Shroom", "VaatiVidya", "Internet", "Historian", "Kjellberg", "Rober"};
+const string names[11] = {"Lėja", "Amelija", "Emilija", "Sofija", "Gabija", "Benas", "Markas", "Lukas", "Matas", "Nojus", "Rufijus"};
+const string surnames[11] = {"Broom", "Car", "Far", "Doorman", "Shroom", "VaatiVidya", "Internet", "Historian", "Kjellberg", "Rober", "Pastorius"};
 
 
 class RandInt{

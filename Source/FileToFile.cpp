@@ -11,6 +11,7 @@
 #include <sstream>
 #include <fstream>
 #include <exception>
+#include <chrono>
 
 
 using std::cout;
@@ -33,13 +34,19 @@ class GradeValueError{};
 
 void fileToFile(string input){
 
+    std::chrono::time_point<std::chrono::high_resolution_clock> start_input, end_input;
+    std::chrono::time_point<std::chrono::high_resolution_clock> start_sort, end_sort;
+    std::chrono::time_point<std::chrono::high_resolution_clock> start_output, end_output;  
+
     vector<Student> students;
     string fileString;
+
+start_input = std::chrono::high_resolution_clock::now();  
 
     stringstream fileStream;
     try{
         fstream data;
-        data.open("kursiokai.txt");
+        data.open(input);
         if( data.fail()) throw exception();
         fileStream << data.rdbuf();
         
@@ -49,6 +56,8 @@ void fileToFile(string input){
         cout<<"Exception: Unable to open the file"<<endl;
         exit(1);
     }
+
+    
 
     
     string line;
@@ -61,8 +70,6 @@ void fileToFile(string input){
         
         stringstream lineStream(line); 
 
-            
-        
         vector <double> grades;
         Student buffStud;
         double examRez;
@@ -103,8 +110,13 @@ void fileToFile(string input){
 
     }
 
+    end_input = std::chrono::high_resolution_clock::now(); 
+
+start_sort =std::chrono::high_resolution_clock::now(); 
+
     sort(students.begin(),students.end());
 
+    long int studKiek = students.size();
 
     long int it;
     for(it = 0; it<students.size(); it++) if(students[it].finalAvrg >= 5) break; 
@@ -116,9 +128,25 @@ void fileToFile(string input){
     
     students.resize(it+1);
 
-    print(islaike, "islaike.txt");
-    print(students, "skolininkai.txt");
-    
+end_sort = std::chrono::high_resolution_clock::now(); 
+
+start_output = std::chrono::high_resolution_clock::now(); 
+
+    print(islaike, "islaike.txt", true);
+    print(students, "skolininkai.txt", true);
+
+end_output = std::chrono::high_resolution_clock::now(); 
+
     islaike.clear();
     students.clear();
+
+ std::chrono::duration<double> input_dur = end_input - start_input;
+ std::chrono::duration<double> sort_dur = end_sort - start_sort; 
+ std::chrono::duration<double> output_dur = end_output - start_output; 
+
+cout<<studKiek<<" irasu gavimo is failo trukme: "<<input_dur.count()<<"s"<<endl;
+cout<<studKiek<<" irasu u rusiavimo trukme:     "<<sort_dur.count()<<"s"<<endl;
+cout<<studKiek<<" irasu  isvedimo trukme:       "<<output_dur.count()<<"s"<<endl;
+
+
 }

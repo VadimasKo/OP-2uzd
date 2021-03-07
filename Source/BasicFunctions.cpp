@@ -66,14 +66,14 @@ bool question(string message){
             return 0;
         }
         else {
-            cout<<"\t"<<"Ivestis netinkama, prasome prasome pakartoti ivesti"<<endl;
+            cout<<"Ivestis netinkama, prasome prasome pakartoti ivesti"<<endl;
             cinClean();
         }
 
     }
 }
 
-void print(vector<Student> &students, string file){
+void print(vector<Student> &students, string file, bool title){
    
 
     stringstream outputStream;
@@ -81,8 +81,12 @@ void print(vector<Student> &students, string file){
     outputStream<<setw(25); outputStream<<std::right<<"pavarde ";
     outputStream<<setw(25); outputStream<<std::right<<"Galutinis(Med) ";
     outputStream<<setw(25); outputStream<<std::right<<"Galutinis(Vid) "<<'\n';
+    
     string line(100, '-');
-    outputStream<<line<<'\n';
+    
+    if(title == 1) outputStream<<line<<'\n';
+    
+    
 
 
     for(int i = 0; i<students.size(); i++){
