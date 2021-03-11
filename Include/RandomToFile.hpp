@@ -1,3 +1,7 @@
 #pragma once
 
-void randomToFile();
+void randomToFile(int studKiek);
+
+// void randomToFileDeque(int studKiek);
+
+// void randomToFileList(int studKiek);

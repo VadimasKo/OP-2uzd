@@ -43,12 +43,10 @@ double getMedian(vector<double> &grades){
         
 }
 
-
 void cinClean(){
     cin.clear();
     cin.ignore(10000, '\n'); 
 }
-
 
 bool question(string message){
     cout<<message<<" y/n ";

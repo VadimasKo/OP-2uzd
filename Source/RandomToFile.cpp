@@ -13,18 +13,7 @@ using std::cin;
 
 
 
-void randomToFile(){
-    int studKiek;
-
-    cout<<"Iveskite studentu kieki : ";
-    while(1){
-        cin>>studKiek;
-        if(studKiek<=0 || cin.fail()){
-            cout<<"Ivestis netinkama, prasome prasome pakartoti ivesti"<<endl;
-            cinClean();
-        }
-        else break;
-    }
+void randomToFile(int studKiek){
 
 std::chrono::time_point<std::chrono::high_resolution_clock> start_input, end_input;
 std::chrono::time_point<std::chrono::high_resolution_clock> start_output, end_output;  
