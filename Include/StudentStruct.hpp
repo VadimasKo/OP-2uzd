@@ -10,6 +10,8 @@ struct Student{
     
     void makeRandom();
 
+    std::string getRandomString();
+
     void setFinalGrade(std::vector<double> &grades, double examRez);
     bool operator < (Student &obj) const;
 };

@@ -2,12 +2,13 @@
 #include "../Include/BasicFunctions.hpp"
 
 #include <random>
+#include <string>
 
 using std::vector;
 using std::string;
 
-const string names[11] = {"Lėja", "Amelija", "Emilija", "Sofija", "Gabija", "Benas", "Markas", "Lukas", "Matas", "Nojus", "Rufijus"};
-const string surnames[11] = {"Broom", "Car", "Far", "Doorman", "Shroom", "VaatiVidya", "Internet", "Historian", "Kjellberg", "Rober", "Pastorius"};
+const string names[11] = {"Lėja \t", "Amelija \t", "Emilija \t", "Sofija \t", "Gabija \t", "Benas \t", "Markas \t", "Lukas \t", "Matas \t", "Nojus \t", "Rufijus \t"};
+const string surnames[11] = {"Broom \t", "Car \t", "Far \t", "Doorman \t", "Shroom \t", "VaatiVidya \t", "Internet \t", "Historian \t", "Kjellberg \t", "Rober \t", "Pastorius \t"};
 
 
 class RandInt{
@@ -19,7 +20,6 @@ class RandInt{
         std::mt19937 mt;
         std::uniform_int_distribution<int> dist;
 };
-
 
 void Student::makeRandom(){
 
@@ -40,6 +40,22 @@ void Student::makeRandom(){
     fName = names[rnd()];
     lName = surnames[rnd()];
 
+}
+
+string Student::getRandomString(){
+    RandInt rnd{0,10};
+    
+    string line(names[rnd()]);
+    line.reserve(60);
+    line.append(surnames[rnd()]);
+
+    for(int i= 0; i<10; i++) {
+        line.append("\t");
+        line.append(std::to_string(rnd()));
+    }
+    line +="\n";
+
+    return line;
 }
 
 

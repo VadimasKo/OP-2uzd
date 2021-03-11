@@ -5,7 +5,10 @@
 #include <iostream>
 #include <vector>
 #include <chrono>
+#include <string>
+#include <fstream>
 
+using std::string;
 using std::cout;
 using std::endl;
 using std::vector;
@@ -17,24 +20,25 @@ void randomToFile(int studKiek){
 
 std::chrono::time_point<std::chrono::high_resolution_clock> start_input, end_input;
 std::chrono::time_point<std::chrono::high_resolution_clock> start_output, end_output;  
-
 start_input = std::chrono::high_resolution_clock::now(); 
 
-    vector<Student> studentai;
-    studentai.reserve(studKiek);
-    
-    for(int i = 0; i<studKiek; i++){
-        Student buffStud;
-        buffStud.makeRandom();
-        studentai.push_back(buffStud);
-    }
+    Student studentas;
+    string output("Vardas   Pavarde   nd1.. egz \n");
+    output.reserve(studKiek*60);
+
+    for(int i = 0; i<studKiek; i++) output.append(studentas.getRandomString());
 
 end_input = std::chrono::high_resolution_clock::now();
 
 start_output = std::chrono::high_resolution_clock::now(); 
-    print(studentai, "studentai.txt", false);
-    studentai.clear();
+
+    std::ofstream result;
+    result.open("studentai.txt");
+    result<<output;
+    result.close();
+
 end_output = std::chrono::high_resolution_clock::now();
+
 
 
 std::chrono::duration<double> input_dur = end_input - start_input;
