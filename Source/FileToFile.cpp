@@ -132,8 +132,8 @@ end_sort = std::chrono::high_resolution_clock::now();
 
 start_output = std::chrono::high_resolution_clock::now(); 
 
-    print(islaike, "islaike.txt", true);
-    print(students, "skolininkai.txt", true);
+    print(islaike, "islaike.txt");
+    print(students, "skolininkai.txt");
 
 end_output = std::chrono::high_resolution_clock::now(); 
 
@@ -143,10 +143,8 @@ end_output = std::chrono::high_resolution_clock::now();
  std::chrono::duration<double> input_dur = end_input - start_input;
  std::chrono::duration<double> sort_dur = end_sort - start_sort; 
  std::chrono::duration<double> output_dur = end_output - start_output; 
-
-cout<<studKiek<<" irasu gavimo is failo trukme: "<<input_dur.count()<<"s"<<endl;
-cout<<studKiek<<" irasu u rusiavimo trukme:     "<<sort_dur.count()<<"s"<<endl;
-cout<<studKiek<<" irasu  isvedimo trukme:       "<<output_dur.count()<<"s"<<endl;
-
-
+ 
+cout<<studKiek<<" input duration:        "<<input_dur.count()<<"s"<<endl;
+cout<<studKiek<<" sort duration:         "<<sort_dur.count()<<"s"<<endl;
+cout<<studKiek<<" output duration:       "<<output_dur.count()<<"s"<<endl;
 }

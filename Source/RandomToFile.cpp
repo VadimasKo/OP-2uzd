@@ -26,9 +26,6 @@ start_input = std::chrono::high_resolution_clock::now();
     string output("Vardas   Pavarde   nd1.. egz \n");
     output.reserve(studKiek*60);
 
-    //panaudok func pointeri
-
-
     for(int i = 0; i<studKiek; i++) output.append(studentas.getRandomString());
 
 end_input = std::chrono::high_resolution_clock::now();
@@ -47,7 +44,7 @@ end_output = std::chrono::high_resolution_clock::now();
 std::chrono::duration<double> input_dur = end_input - start_input;
 std::chrono::duration<double> output_dur = end_output - start_output; 
 
-cout<<studKiek<<" irasu sukurimo trukme: "<<input_dur.count()<<"s"<<endl;
-cout<<studKiek<<" irasu isvedimo trukme: "<<output_dur.count()<<"s"<<endl;
+cout<<studKiek<<" duration of creation   "<<input_dur.count()<<"s"<<endl;
+cout<<studKiek<<" output duration:       "<<output_dur.count()<<"s"<<endl;
 
 }

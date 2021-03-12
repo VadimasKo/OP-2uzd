@@ -71,7 +71,7 @@ bool question(string message){
     }
 }
 
-void print(vector<Student> &students, string file, bool title){
+void print(vector<Student> &students, string file){
    
 
     stringstream outputStream;
@@ -79,10 +79,9 @@ void print(vector<Student> &students, string file, bool title){
     outputStream<<setw(25); outputStream<<std::right<<"pavarde ";
     outputStream<<setw(25); outputStream<<std::right<<"Galutinis(Med) ";
     outputStream<<setw(25); outputStream<<std::right<<"Galutinis(Vid) "<<'\n';
-    
     string line(100, '-');
     
-    if(title == 1) outputStream<<line<<'\n';
+    outputStream<<line<<'\n';
     
     
 

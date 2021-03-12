@@ -21,7 +21,7 @@ class RandInt{
         std::uniform_int_distribution<int> dist;
 };
 
- RandInt rnd {0,10};
+RandInt rnd {0,10};
 
 void Student::makeRandom(){
     double sum = 0;
