@@ -26,6 +26,9 @@ start_input = std::chrono::high_resolution_clock::now();
     string output("Vardas   Pavarde   nd1.. egz \n");
     output.reserve(studKiek*60);
 
+    //panaudok func pointeri
+
+
     for(int i = 0; i<studKiek; i++) output.append(studentas.getRandomString());
 
 end_input = std::chrono::high_resolution_clock::now();

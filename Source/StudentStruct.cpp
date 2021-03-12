@@ -21,11 +21,9 @@ class RandInt{
         std::uniform_int_distribution<int> dist;
 };
 
+ RandInt rnd {0,10};
+
 void Student::makeRandom(){
-
-
-    RandInt rnd {0,10};
-
     double sum = 0;
     for (int i= 0; i<10;i++) sum += rnd();
     if(sum!=0) finalAvrg = sum/10;
@@ -43,8 +41,6 @@ void Student::makeRandom(){
 }
 
 string Student::getRandomString(){
-    RandInt rnd{0,10};
-    
     string line(names[rnd()]);
     line.reserve(60);
     line.append(surnames[rnd()]);
