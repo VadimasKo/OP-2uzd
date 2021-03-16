@@ -151,7 +151,7 @@ void sortToFileVector(std::string fileName){
     std::cout<<"duration of sorting: "<<sort_dur.count()<<"s"<<std::endl;
 }
 
-void sortToFileDeque(std::string const fileName){
+void sortToFileDeque(std::string fileName){
     std::deque<Student> students;
 
     std::chrono::time_point<std::chrono::high_resolution_clock> start_input, end_input;
@@ -187,7 +187,7 @@ void sortToFileDeque(std::string const fileName){
     std::cout<<"duration of sorting: "<<sort_dur.count()<<"s"<<std::endl;
 }
 
-void sortToFileList(std::string const fileName){
+void sortToFileList(std::string fileName){
     std::list<Student> students;
 
     std::chrono::time_point<std::chrono::high_resolution_clock> start_input, end_input;
