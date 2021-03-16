@@ -14,6 +14,7 @@
   Vardas1                 Pavarde1           3        10         8         1         7       0        2
   ...
 ```
+*.txt file'a reikia perkelti i Results folderi
 
 ## Programos veikimo sparta
 |   size   | Input duration(vector) | Input duration(deque)  | Input duration(list) |
@@ -35,12 +36,10 @@
 2. Komandinėje eilutėje įvykdykite sekančius veiksmus:
 ```shell
   cd nuoroda_į_programos_aplanką
-  make unpack
+
   make
 ```
-3. jeigu make unpack nesukure ProjectFiles aplankalo, sukurkite ji patys  
-
-4. programos paleidimas :   ./my_program arba ./my_program input.txt 
+3. programos paleidimas :   ./my_program arba ./my_program input.txt 
 
 ## Pokyciu logas
 #### v0.1 pokyciai
