@@ -11,6 +11,7 @@
 #include <iomanip>
 #include <exception>
 #include <algorithm>
+#include <chrono>
 
 
 //--------private functions ------
@@ -116,9 +117,15 @@ void print(T &students, std::string file){
 //------public functions ----------
 void sortToFileVector(std::string fileName){
     std::vector<Student> students;
-    readData(students,fileName);
 
-    //sorting
+    std::chrono::time_point<std::chrono::high_resolution_clock> start_input, end_input;
+    std::chrono::time_point<std::chrono::high_resolution_clock> start_sort, end_sort;
+
+    start_input = std::chrono::high_resolution_clock::now(); 
+    readData(students,fileName);
+    end_input = std::chrono::high_resolution_clock::now(); 
+
+    start_sort =std::chrono::high_resolution_clock::now(); 
     std::sort(students.begin(),students.end());
     long int studKiek = students.size();
 
@@ -130,17 +137,31 @@ void sortToFileVector(std::string fileName){
     std::vector<Student>::const_iterator last = students.end();
     std::vector<Student> islaike(first,last);
     students.resize(it);
+    end_sort = std::chrono::high_resolution_clock::now();
 
-    //print
     print(islaike,"islaike.txt");
     print(students,"skolininkai.txt");
+
+    islaike.clear();
+    students.clear();
+
+    std::chrono::duration<double> input_dur = end_input - start_input;
+    std::chrono::duration<double> sort_dur = end_sort - start_sort; 
+    std::cout<<"duration of input:   "<<input_dur.count()<<"s"<<std::endl;
+    std::cout<<"duration of sorting: "<<sort_dur.count()<<"s"<<std::endl;
 }
 
 void sortToFileDeque(std::string const fileName){
     std::deque<Student> students;
-    readData(students,fileName);
 
-    //sorting
+    std::chrono::time_point<std::chrono::high_resolution_clock> start_input, end_input;
+    std::chrono::time_point<std::chrono::high_resolution_clock> start_sort, end_sort;
+
+    start_input = std::chrono::high_resolution_clock::now();  
+    readData(students,fileName);
+    end_input = std::chrono::high_resolution_clock::now(); 
+
+    start_sort =std::chrono::high_resolution_clock::now();
     std::sort(students.begin(),students.end());
     long int studKiek = students.size();
 
@@ -152,15 +173,31 @@ void sortToFileDeque(std::string const fileName){
     std::deque<Student>::const_iterator last = students.end();
     std::deque<Student> islaike(first,last);
     students.resize(it);
+    end_sort = std::chrono::high_resolution_clock::now();
 
     print(islaike,"islaike.txt");
     print(students,"skolininkai.txt");
+
+    islaike.clear();
+    students.clear();
+
+    std::chrono::duration<double> input_dur = end_input - start_input;
+    std::chrono::duration<double> sort_dur = end_sort - start_sort; 
+    std::cout<<"duration of input:   "<<input_dur.count()<<"s"<<std::endl;
+    std::cout<<"duration of sorting: "<<sort_dur.count()<<"s"<<std::endl;
 }
 
 void sortToFileList(std::string const fileName){
     std::list<Student> students;
-    readData(students,fileName);
 
+    std::chrono::time_point<std::chrono::high_resolution_clock> start_input, end_input;
+    std::chrono::time_point<std::chrono::high_resolution_clock> start_sort, end_sort;
+
+    start_input = std::chrono::high_resolution_clock::now();  
+    readData(students,fileName);
+    end_input = std::chrono::high_resolution_clock::now(); 
+
+    start_sort =std::chrono::high_resolution_clock::now();
     students.sort();
 
     std::list<Student>::iterator it;
@@ -171,7 +208,16 @@ void sortToFileList(std::string const fileName){
     }
     std::list<Student> islaike;
     islaike.splice(islaike.begin(), students, it, students.end());
+    end_sort = std::chrono::high_resolution_clock::now();
 
     print(islaike,"islaike.txt");
     print(students,"skolininkai.txt");
+
+    islaike.clear();
+    students.clear();
+
+    std::chrono::duration<double> input_dur = end_input - start_input;
+    std::chrono::duration<double> sort_dur = end_sort - start_sort; 
+    std::cout<<"duration of input:   "<<input_dur.count()<<"s"<<std::endl;
+    std::cout<<"duration of sorting: "<<sort_dur.count()<<"s"<<std::endl;
 }
