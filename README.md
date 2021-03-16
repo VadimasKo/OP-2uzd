@@ -16,14 +16,20 @@
 ```
 
 ## Programos veikimo sparta
+|   size   | Input duration(vector) | Input duration(deque)  | Input duration(list) |
+|:--------:|:----------------------:|:----------------------:|:--------------------:|
+|  100000  |          0.29s         |          0.29s         |         0.32s        |
+|  1000000 |          3.08s         |          3.01s         |         3.27s        |
+| 10000000 |         33.64s         |         30.28s         |        30.22s        |
 
-| size     | Creation time | Input duration  | Sorting duration  | Output duration |
-|----------|---------------|-----------------|-------------------|-----------------|
-| 1000     | 0.03s         | 0.005s          | 0.001s            | 0.005s          |
-| 10000    | 0.2s          | 0.042s          | 0.006s            | 0.009s          |
-| 100000   | 1.8s          | 0.203s          | 0.063s            | 0.093s          |
-| 1000000  | 17.28s        | 1.818s          | 0.729s            | 1.222s          |
-| 10000000 | 158.14s       | 16.744s         | 8.693s            | 10.360s         |
+|   size   | Sort duration(vector) | Sort duration(deque)  | Sort duration(list) |
+|:--------:|:---------------------:|:---------------------:|:-------------------:|
+|  100000  |         0.05s         |         0.09s         |        0.09s        |
+|  1000000 |         0.73s         |         1.08s         |        1.43s        |
+| 10000000 |         9.10s         |         13.13s        |        16.50s       |
+
+
+
 
 *Programa buvo testuojama naudojant tik 2 pazymius
 
@@ -54,6 +60,10 @@
 - Patobulintas random generavimas
 - rezultatai pateikiami i  islaike.txt (galutinis(vid) >= 5) ir  skolininkai.txt (galutinis(vid) <5)
 - programa pateikia ivairiu jos daliu darbo laika
-
+#### v0.5 pokyciai
+- optimizuota duomenu kurimo funkcija
+- pridetos sort funkcijos naudojancios stl deque ir stl list konteinerius
+- patobulintas "user interface"
+- atsikratyta nereikalingu file'u
 
 
