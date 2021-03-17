@@ -36,6 +36,7 @@
 |  100000  | 0.121907s            | 1.79761s            |
 |  1000000 | 1.02847s             | 25.9479s            |
 | 10000000 | 10.1511s             | 231.401s            |
+
 *Duration of program -> creation+(input+sort+output)*(with vector, with deque, with list)
 
 ## Programos diegimas ir paleidimas
