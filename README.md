@@ -37,7 +37,7 @@
 |  1000000 | 1.02847s             | 25.9479s            |
 | 10000000 | 10.1511s             | 231.401s            |
 
-*Duration of program -> creation+(input+sort+output)*(with vector, with deque, with list)
+*Duration of program = creation+(input+sort+output)*(with vector, with deque, with list)
 
 ## Programos diegimas ir paleidimas
 1. Atsiuskite programos versija is Releases
