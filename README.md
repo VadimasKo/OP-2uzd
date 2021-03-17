@@ -1,14 +1,14 @@
-# Pazymiu skaiciuokle
+# Pažymiu skaičiuokle
 
 ## Ka daro?
 - nuskaito studentu duomenys, is .txt file'o arba naudojant UserInput
-- Apskaiciuoja galutini rezultata naudojant mediana ir vidurki
-- Pateikia surusiuotus duomenys
+- Apskaičiuoja galutini rezultatą naudojant mediana ir vidurki
+- Pateikia rūšiuotus duomenis
 
-## Pradiniu duomenu pavyzdis
+## Pradiniu duomenų pavyzdys
 - "kursiokai.txt"
-    - Pirmos eilutes formatas nesvarbus
-    - Nuo antros eilutes prasideda studentu duomenys : vardas, pavarde, namu darbu ivertinimai[0-10], egzamino ivertinimas [0-10]
+- Pirmos eilutes formatas nesvarbus
+- Nuo antros eilutes prasideda studentu duomenys : vardas, pavarde, namu darbu įvertinimai[0-10], įvertinimas egzamino  [0-10]
 ```shell
   Vardas                   Pavarde         ND1       ND2       ND3       ND4       ND5     NDx      Egz.
   Vardas1                 Pavarde1           3        10         8         1         7       0        2
