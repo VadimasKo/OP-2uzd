@@ -29,7 +29,14 @@
 |  1000000 |         0.73s         |         1.08s         |        1.43s        |
 | 10000000 |         9.10s         |         13.13s        |        16.50s       |
 
-*Programa buvo testuojama naudojant: Kingston A400(480gb) ssd, 8gb soddim ddr4 ram, Intel Core i5-7300HQ 
+*Programa buvo testuojama naudojant: Kingston A400(480gb) ssd, 8gb soddim ddr4 ram, Intel Core i5-7300HQ
+
+|   size   | Duration of Creation | Duration of program |
+|:--------:|----------------------|---------------------|
+|  100000  | 0.121907s            | 1.79761s            |
+|  1000000 | 1.02847s             | 25.9479s            |
+| 10000000 | 10.1511s             | 231.401s            |
+*Duration of program -> creation+(input+sort+output)*(with vector, with deque, with list)
 
 ## Programos diegimas ir paleidimas
 1. Atsiuskite programos versija is Releases
