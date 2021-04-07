@@ -12,6 +12,9 @@ SortToFile.o:
 StudentStruct.o:
 	cd Source && g++ -c StudentStruct.cpp && mv StudentStruct.o ../ProjectFiles/StudentStruct.o
 
+unpack:
+	mkdir ProjectFiles && mkdir Results
+
 clear:
 	rm my_program.exe && cd ProjectFiles && rm *.o
 
