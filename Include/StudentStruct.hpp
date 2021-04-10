@@ -3,10 +3,12 @@
 #include <string>
 #include <vector>
 
-struct Student{
+struct StudentStruct
+{
     std::string fName, lName;
     double finalMed, finalAvrg;
 
-    void setFinalGrade(std::vector<int> &grades, double examRes);
-    bool operator < (Student &obj) const;
+    void setFinalGrades(std::vector<int> &grades, double examRes);
+    bool operator < (StudentStruct &obj) const;
+    /* data */
 };
