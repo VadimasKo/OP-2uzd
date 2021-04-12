@@ -22,6 +22,7 @@ const std::string surnames[11] = {"Broom \t", "Car \t", "Far \t", "Doorman \t", 
 std::string getRandomLine(){
     std::string line(names[rnd()]);
     line.reserve(60);
+    line.append(surnames[rnd()]);
 
     for(int i = 0; i<10; i++){
         line.append("\t");
