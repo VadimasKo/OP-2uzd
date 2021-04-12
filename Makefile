@@ -1,5 +1,5 @@
-main: GenerateRecords.o Main.o  StudentStruct.o
-	cd ProjectFiles && g++ -o my_program.exe StudentStruct.o GenerateRecords.o Main.o  && mv my_program.exe ../my_program.exe
+main: GenerateRecords.o Main.o  StudentStruct.o Timer.o
+	cd ProjectFiles && g++ -o my_program.exe StudentStruct.o GenerateRecords.o Main.o Timer.o && mv my_program.exe ../my_program.exe
 Main.o:
 	cd Source && g++ -c Main.cpp && mv Main.o ../ProjectFiles/Main.o
 
@@ -9,6 +9,9 @@ GenerateRecords.o:
 StudentStruct.o:
 	cd Source && g++ -c StudentStruct.cpp && mv StudentStruct.o ../ProjectFiles/StudentStruct.o
 
+Timer.o:
+	cd Source && g++ -c Timer.cpp && mv Timer.o ../ProjectFiles/Timer.o
+	
 unpack:
 	mkdir ProjectFiles && mkdir Results
 

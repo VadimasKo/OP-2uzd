@@ -13,7 +13,7 @@ void Timer::calcOutput(){ output = highResClock::now() - start;}
 void Timer::printRes(bool showTitle, std::string name){
     using std::setw;
 
-    if(showTitle) std::cout<<std::left<<setw(20)<<" "<<setw(20)<<"Ivedimo trukme"<<setw(20)<<"Rusiavimo trukme"<<setw(20)<<"Isvedimo trukme"<<"\n";
+    if(showTitle) std::cout<<std::left<<setw(20)<<" "<<setw(20)<<"Input dur."<<setw(20)<<"Sort dur."<<setw(20)<<"Output dur."<<"\n";
 
     std::cout.precision(2);
     std::cout<<std::fixed;
@@ -23,5 +23,4 @@ double Timer::giveDuration(){
     durationDouble duration = highResClock::now() - start;
     return duration.count();
 }
-
 
