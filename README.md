@@ -29,7 +29,7 @@
 |  1000000 |         0.73s         |         1.08s         |        1.43s        |
 | 10000000 |         9.10s         |         13.13s        |        16.50s       |
 
-*Programa buvo testuojama naudojant: Kingston A400(480gb) ssd, 8gb soddim ddr4 ram, Intel Core i5-7300HQ
+*Programa buvo testuojama naudojant: Kingston A400(480gb) ssd, 8gb soddim ddr4 ram, Intel Core i5-7300HQ, 3strategija
 
 |   size   | Duration of Creation | Duration of program |
 |:--------:|----------------------|---------------------|
@@ -38,7 +38,27 @@
 | 10000000 | 10.1511s             | 231.401s            |
 
 *Duration of program = creation+(input+sort+output)*(with vector, with deque, with list)
+## Skirtingos Strategijos
 
+#### Strategija Nr1
+  Programa sukuria 2 papildomus to paties tipo (vector, list, deque) konteinerius -"islaike","skolininkai". 
+  Tada tikrina kiekviena "students" konteinerio elementa,jeigu elementas <= 5 priskyria ji "skolininkai",
+  kitu atveju priskyria ji "islaike"
+ 
+#### Strategija Nr2 
+  Programa sukuria 1 papildoma to paties tipo konteineri "islaike". Tada tikrina pradinio konteinerio elementus,
+  elementui bunant >= 5, priskyria ji "islaike" ir istrina ji is pradinio konteinerio
+ 
+#### Strategija Nr3
+  Programa surikiuoja pradinio konteinerio elementus didejimo tvarka(pagal vidurki), tada suranda pirmo elemento >= 5 pozicija.
+  Konteinerio dalys >= 5 yra priskyriama naujam konteineriui "islaike" naudojant copy(splice su std::list) funkcija, 
+  galu gale istrina is pradinio elemento nukopijotus elementus
+  
+## Programos veikimo sparta taikant skirtingas strategijas  
+  ![image](https://user-images.githubusercontent.com/54241089/114406516-46d75a80-9bb0-11eb-9902-fe78bf83490d.png)
+  ![image](https://user-images.githubusercontent.com/54241089/114406906-9453c780-9bb0-11eb-9f07-0cb1351c3e72.png)
+
+ 
 ## Programos diegimas ir paleidimas
 1. Atsiuskite programos versija is Releases
 2. Komandinėje eilutėje įvykdykite sekančius veiksmus:
@@ -69,5 +89,9 @@
 - pridetos sort funkcijos naudojancios stl deque ir stl list konteinerius
 - patobulintas "user interface"
 - atsikratyta nereikalingu file'u
-
+#### v1.0
+- sukurta Timer klase patogesniam laiko matavymui
+- SortToFile funkcija suskaidyta ir generalizuota
+- Pridetos 2 papildomos sort strategijos
+- Pakeistas UI kad matyti skirtumus tarp strategiju ir konteineriu pasirinkimu
 
