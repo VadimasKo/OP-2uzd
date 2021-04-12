@@ -55,8 +55,11 @@
   galu gale istrina is pradinio elemento nukopijotus elementus
   
 ## Programos veikimo sparta taikant skirtingas strategijas  
+Studentu skaicius -100 000
 ![image](https://user-images.githubusercontent.com/54241089/114406516-46d75a80-9bb0-11eb-9902-fe78bf83490d.png)
+Studentu skaicius -1 000 000
 ![image](https://user-images.githubusercontent.com/54241089/114406906-9453c780-9bb0-11eb-9f07-0cb1351c3e72.png)
+Studentu skaicius -10 000 000
 ![image](https://user-images.githubusercontent.com/54241089/114408266-eb0dd100-9bb1-11eb-9024-c26b273034d4.png)
 
  
